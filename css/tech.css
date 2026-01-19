@@ -1,0 +1,23 @@
+/* tech.css */
+
+.tech {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.tech__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  transition: 0.2s;
+}
+
+.tech__item:hover {
+  background: var(--chipHover);
+  color: var(--text);
+}

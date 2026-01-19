@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammad Zia | Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <!-- css files -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/tech.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+
     <!-- Favicons -->
     <link rel="icon" href="assets/favicon/favicon.ico" />
     <link
@@ -81,8 +91,10 @@
           <a href="#tech" class="menu__link">Stack</a>
           <a href="#contact" class="menu__link">Contact</a>
           <a
-            href="/assets/Resume-Muhammad-Zia-+923354545236.pdf"
+            href="assets/pdf/Resume-Muhammad-Zia-+923354545236.pdf"
             class="menu__icon"
+            target="_blank"
+            rel="noopener"
           >
             <i class="fa-solid fa-download"></i>
           </a>
@@ -96,8 +108,8 @@
           </button>
         </nav>
 
-        <button class="burger" id="burger" aria-label="Open Menu">
-          <span></span><span></span><span></span>
+        <button class="burger" id="burger" type="button" aria-label="Open Menu">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
       </div>
     </header>
@@ -289,7 +301,6 @@
               custom modules, views, wizards, and clean logic that scales.
             </p>
             <div class="tags">
-              <span class="tag">Odoo</span>
               <span class="tag">Python</span>
               <span class="tag">PostgreSQL</span>
               <span class="tag">XML</span>
@@ -310,7 +321,6 @@
               <span class="tag">REST API</span>
               <span class="tag">JSON-RPC</span>
               <span class="tag">Postman</span>
-              <span class="tag">Odoo</span>
             </div>
           </article>
 
@@ -326,7 +336,6 @@
             </p>
             <div class="tags">
               <span class="tag">Python</span>
-              <span class="tag">Odoo</span>
               <span class="tag">XML</span>
               <span class="tag">PostgreSQL</span>
             </div>
@@ -343,7 +352,7 @@
               manual work and keep processes consistent across teams.
             </p>
             <div class="tags">
-              <span class="tag">Odoo Workflows</span>
+              <span class="tag">Workflows</span>
               <span class="tag">Business Logic</span>
               <span class="tag">Automation</span>
             </div>
@@ -398,19 +407,22 @@
           <article class="card">
             <h3 class="card__title">Lotus Trading (Retail & Distribution)</h3>
             <p class="card__text">
-              Sales, Purchase, Inventory, Accounting customization + 10+
-              PDF/Excel reports and material tracking.
+              Led end-to-end customization for a retail and distribution
+              business, covering Sales, Purchase, Inventory, and Accounting.
+              Delivered 10+ custom PDF and Excel reports, implemented material
+              tracking, and optimized workflows for daily operations and
+              financial accuracy.
             </p>
             <div class="tags">
               <span class="tag">Trinidad & Tobago</span>
               <span class="tag">Visiomate</span>
-              <span class="tag">Odoo</span>
-              <span class="tag">Reports</span>
-              <span class="tag">Inventory</span>
+              <span class="tag">Inventory Management</span>
+              <span class="tag">Accounting</span>
+              <span class="tag">Custom Reports</span>
             </div>
             <a
               class="card__corner-icon"
-              href="https://www.lotustradingltd.com/"
+              href="https://lotustradingltd.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open Lotus Trading website"
@@ -422,15 +434,21 @@
           <article class="card">
             <h3 class="card__title">TTi Testing Laboratories</h3>
             <p class="card__text">
-              Dashboards, attendance rules, biometric integration, HR/payroll
-              customizations, advanced reporting.
+              Developed custom dashboards, attendance rules, and biometric
+              device integrations with Odoo HR. Implemented payroll-related
+              customizations, advanced reporting, and internal portals to
+              improve workforce tracking and operational visibility.
             </p>
             <div class="tags">
               <span class="tag">Pakistan</span>
               <span class="tag">Visiomate</span>
-              <span class="tag">Dashboards</span>
+              <span class="tag">Dashboard</span>
+              <span class="tag">Customization</span>
+              <span class="tag">Report</span>
+              <span class="tag">Portal</span>
+              <span class="tag">Attendance</span>
               <span class="tag">HR</span>
-              <span class="tag">ZKT</span>
+              <span class="tag">Payroll</span>
             </div>
             <a
               class="card__corner-icon"
@@ -446,15 +464,19 @@
           <article class="card">
             <h3 class="card__title">EcoZohm</h3>
             <p class="card__text">
-              Customer portal for SO creation, automated PO generation, shipping
-              integration, project task automation.
+              Customer portal, allowing users to create Sales Orders directly,
+              with automated Purchase Order generation and shipping workflow
+              integration. Implemented project task automation to streamline
+              operations from order placement to execution.
             </p>
             <div class="tags">
               <span class="tag">United States</span>
               <span class="tag">Visiomate</span>
-              <span class="tag">Portal</span>
+              <span class="tag">Customer Portal</span>
               <span class="tag">Automation</span>
-              <span class="tag">API</span>
+              <span class="tag">Sales & Purchase</span>
+              <span class="tag">Shipping Integration</span>
+              <span class="tag">Report</span>
             </div>
             <a
               class="card__corner-icon"
@@ -470,14 +492,18 @@
           <article class="card">
             <h3 class="card__title">Carib Island Trading</h3>
             <p class="card__text">
-              Dropshipping flow customizations, automation between Sales &
-              Purchase, WhatsApp and mail server setup.
+              Odoo ERP customization for a dropshipping business, focusing on
+              automation between Sales and Purchase workflows. Implemented order
+              synchronization, reporting improvements, and system integrations
+              including WhatsApp and mail server configuration.
             </p>
             <div class="tags">
               <span class="tag">United States</span>
               <span class="tag">Visiomate</span>
               <span class="tag">Dropshipping</span>
-              <span class="tag">Odoo</span>
+              <span class="tag">Report</span>
+              <span class="tag">Synchronization</span>
+              <span class="tag">Sales & Purchase</span>
               <span class="tag">Integrations</span>
             </div>
             <a
@@ -494,15 +520,21 @@
           <article class="card">
             <h3 class="card__title">Visiomate ERP</h3>
             <p class="card__text">
-              Text text text text text text text text text text text text text
-              text text text text text text text text text.
+              Internal ERP development and customization focused on project
+              management, task workflows, reporting, and business process
+              automation. Worked on project tasks, approvals, performance
+              tracking, custom reports, and system improvements used daily by
+              the internal team.
             </p>
             <div class="tags">
               <span class="tag">Pakistan</span>
               <span class="tag">Visiomate</span>
-              <span class="tag">tag</span>
-              <span class="tag">tag</span>
-              <span class="tag">tag</span>
+              <span class="tag">Project</span>
+              <span class="tag">Report</span>
+              <span class="tag">Task Management</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Payroll</span>
+              <span class="tag">Attendance</span>
             </div>
             <a
               class="card__corner-icon"
@@ -518,67 +550,24 @@
           <article class="card">
             <h3 class="card__title">Quran Academy</h3>
             <p class="card__text">
-              Text text text text text text text text text text text text text
-              text text text text text text text text text.
+              ERP customization for an educational organization, covering
+              employee management, payroll workflows, reporting, and system
+              configuration. Implemented tailored reports, contact management
+              improvements, and process customizations to support day-to-day
+              operations.
             </p>
             <div class="tags">
               <span class="tag">Pakistan</span>
               <span class="tag">Visiomate</span>
-              <span class="tag">tag</span>
-              <span class="tag">tag</span>
-              <span class="tag">tag</span>
+              <span class="tag">Education</span>
+              <span class="tag">Report</span>
+              <span class="tag">Contact</span>
+              <span class="tag">Customization</span>
+              <span class="tag">Payroll</span>
             </div>
             <a
               class="card__corner-icon"
               href="https://quranacademy.edu.pk/  "
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open Lotus Trading website"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Ailuce</h3>
-            <p class="card__text">
-              Text text text text text text text text text text text text text
-              text text text text text text text text text.
-            </p>
-            <div class="tags">
-              <span class="tag">Pakistan</span>
-              <span class="tag">Inbox Ecommerce</span>
-              <span class="tag">WordPress</span>
-              <span class="tag">tag</span>
-              <span class="tag">tag</span>
-            </div>
-            <a
-              class="card__corner-icon"
-              href="https://ailuce.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open Lotus Trading website"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Solar Link</h3>
-            <p class="card__text">
-              Text text text text text text text text text text text text text
-              text text text text text text text text text.
-            </p>
-            <div class="tags">
-              <span class="tag">Pakistan</span>
-              <span class="tag">Inbox Ecommerce</span>
-              <span class="tag">WordPress</span>
-              <span class="tag">tag</span>
-              <span class="tag">tag</span>
-            </div>
-            <a
-              class="card__corner-icon"
-              href="https://solarlink.com.pk/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open Lotus Trading website"
@@ -661,6 +650,17 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <audio id="winkSound" preload="auto">
+      <source
+        src="assets/audio/soundjay_cartoon-eye-blink_main-01.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="assets/audio/soundjay_cartoon-eye-blink_main-01.wav"
+        type="audio/wav"
+      />
+    </audio>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,73 @@
+/* contact.css */
+
+.contact {
+  text-align: center;
+}
+
+.contact__title {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.contact__text {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.email-btn {
+  margin: 34px auto 0;
+  width: min(420px, 100%);
+  height: 62px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent);
+  color: var(--accentText);
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadowBtn);
+}
+
+.email-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
+
+.socials {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 900;
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+.socials a:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.footer {
+  margin-top: 90px;
+  color: var(--muted);
+  font-size: 14px;
+}

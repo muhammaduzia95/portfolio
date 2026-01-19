@@ -1,0 +1,145 @@
+/* timeline.css */
+
+.timeline {
+  margin-top: 60px;
+}
+
+.timeline__track {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* segments = hover targets */
+.timeline__seg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 22px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+/* actual line drawn inside segment */
+.timeline__seg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: var(--line);
+  border-radius: 999px;
+}
+
+/* invisible bridge so hover doesn't break in the gap */
+.timeline__seg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 70px;
+  background: transparent;
+  z-index: 1;
+}
+
+/* length tuning */
+.timeline__seg--outer {
+  flex: 0.55;
+}
+.timeline__seg--inner {
+  flex: 1.2;
+}
+
+/* dot + year */
+.timeline__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.timeline__year {
+  font-weight: 800;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--dot);
+  border-radius: 50%;
+}
+
+/* card */
+.timeline__card {
+  position: absolute;
+  left: 50%;
+  top: 26px;
+  transform: translateX(-50%);
+  width: 250px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+
+  box-shadow: var(--shadowCard);
+  z-index: 10;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.18s ease;
+}
+
+.timeline__card h3 {
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.timeline__card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.timeline__card small {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* links inside timeline card */
+.timeline__card a {
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.timeline__card a:hover {
+  opacity: 0.8;
+}
+
+/* show card while hover or active */
+.timeline__seg:hover .timeline__card,
+.timeline__seg:has(.timeline__card:hover) .timeline__card,
+.timeline__seg.is-active .timeline__card {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* line darker on hover */
+.timeline__seg:hover::before,
+.timeline__seg.is-active::before {
+  background: var(--text);
+}

@@ -1,0 +1,115 @@
+/* nav.css */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--navBg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__inner {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* IMPORTANT for absolute mobile menu */
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo__img {
+  color: var(--text);
+  height: 25px;
+  width: auto;
+  display: block;
+}
+
+/* wink animation */
+.logo__lid {
+  transform-box: fill-box;
+  transform-origin: center 65%;
+}
+
+.logo:hover .logo__lid {
+  animation: wink 0.42s ease-in-out 1;
+}
+
+@keyframes wink {
+  0%,
+  35%,
+  100% {
+    transform: scaleY(1);
+  }
+  55% {
+    transform: scaleY(0.08);
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.menu__link:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+
+.menu__link.is-active {
+  color: var(--text);
+  background: var(--hover);
+}
+
+/* icons in navbar (download + theme toggle) */
+.menu__icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--text);
+  background: transparent;
+  text-decoration: none;
+  transition: 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.menu__icon:hover {
+  background: var(--hover);
+}
+
+.burger {
+  display: none; /* shown in media query */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--text); /* works in dark/light */
+  place-items: center;
+  font-size: 20px;
+}
+
+.burger:hover {
+  background: var(--hover);
+}
