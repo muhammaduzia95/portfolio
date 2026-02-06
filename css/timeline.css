@@ -223,3 +223,34 @@
     background: var(--text);
   }
 }
+
+/* --------------- */
+/* --------------- */
+/* TIMELINE: Scroll animations */
+
+#timeline {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+#timeline.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate timeline elements with stagger */
+.timeline__track {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1s ease 0.2s,
+    transform 1s ease 0.2s;
+}
+
+#timeline.is-visible .timeline__track {
+  opacity: 1;
+  transform: translateY(0);
+}

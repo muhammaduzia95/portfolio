@@ -195,3 +195,47 @@ window.addEventListener("scroll", () => {
 
   lastScroll = currentScroll;
 });
+
+
+// -----------------------------
+// ==========================
+// SCROLL ANIMATIONS
+// ==========================
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: "-50px 0px -50px 0px"
+};
+
+let lastScrollY = window.scrollY;
+let scrollDirection = "down";
+
+// Track scroll direction
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+  scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
+  lastScrollY = currentScrollY;
+}, { passive: true });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Entering viewport - animate in
+      entry.target.classList.add("is-visible");
+      entry.target.dataset.hasAnimated = "true";
+    } else {
+      // Leaving viewport
+      const hasAnimated = entry.target.dataset.hasAnimated === "true";
+      
+      if (hasAnimated && scrollDirection === "up") {
+        // Only fade out when scrolling UP past it
+        entry.target.classList.remove("is-visible");
+        entry.target.dataset.hasAnimated = "false";
+      }
+      // When scrolling DOWN past, stay visible (do nothing)
+    }
+  });
+}, observerOptions);
+
+// Observe all sections except hero
+const sectionsToAnimate = document.querySelectorAll(".section");
+sectionsToAnimate.forEach(section => observer.observe(section));

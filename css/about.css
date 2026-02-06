@@ -6,6 +6,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
+  overflow-x: hidden; /* fallback */
+  overflow-x: clip; /* prevent horizontal scroll from animations */
 }
 
 .about__placeholder {
@@ -27,9 +29,55 @@
   max-width: 520px;
 }
 
-/* .about__right { */
-/* margin-top: 0px; */
-/* } */
+/* Prevent grid overflow */
+.about__left,
+.about__right {
+  min-width: 0;
+}
+
+/* Scroll animations for about section */
+#about {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  overflow-x: hidden; /* extra safety */
+  overflow-x: clip;
+}
+
+#about.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate placeholder (left side) */
+.about__placeholder {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition:
+    opacity 1s ease 0.2s,
+    transform 1s ease 0.2s;
+}
+
+#about.is-visible .about__placeholder {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animate text content (right side) */
+.about__right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 1s ease 0.3s,
+    transform 1s ease 0.3s;
+}
+
+#about.is-visible .about__right {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* Mobile: Stack image on top, text below */
 @media (max-width: 720px) {

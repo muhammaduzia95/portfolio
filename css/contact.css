@@ -33,7 +33,9 @@
   border-radius: 8px;
   border: 1px solid var(--accent);
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .email-btn:hover {

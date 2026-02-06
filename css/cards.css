@@ -99,6 +99,68 @@
   background: var(--chipHover);
 }
 
+/* Scroll animations for card sections */
+#services,
+#projects {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+#services.is-visible,
+#projects.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate cards with stagger effect */
+.card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+#services.is-visible .card,
+#projects.is-visible .card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delay for each card */
+#services.is-visible .card:nth-child(1),
+#projects.is-visible .card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+#services.is-visible .card:nth-child(2),
+#projects.is-visible .card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+#services.is-visible .card:nth-child(3),
+#projects.is-visible .card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+#services.is-visible .card:nth-child(4),
+#projects.is-visible .card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+#services.is-visible .card:nth-child(5),
+#projects.is-visible .card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+#services.is-visible .card:nth-child(6),
+#projects.is-visible .card:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
 /* Mobile: Single column for cards */
 @media (max-width: 720px) {
   .grid {
