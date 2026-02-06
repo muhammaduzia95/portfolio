@@ -141,5 +141,57 @@ if (lid && winkSound) {
   lid.addEventListener("animationstart", playWinkSound);
 }
 
+// // LOGO: prevent scroll, just play animation
+// const logo = document.querySelector(".logo");
+
+// if (logo) {
+//   logo.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//   });
+// }
+
+// LOGO: scroll to top + trigger wink
+const logo = document.querySelector(".logo");
+const logoLid = document.querySelector(".logo__lid");
+
+if (logo && logoLid) {
+  logo.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Trigger wink animation
+    logoLid.style.animation = "none";
+    setTimeout(() => {
+      logoLid.style.animation = "wink 0.42s ease-in-out 1";
+    }, 10);
+  });
+}
 
 
+// ==========================
+// NAV: Hide on scroll down, show on scroll up
+// ==========================
+let lastScroll = 0;
+const nav = document.querySelector(".nav");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  // If at top, always show
+  if (currentScroll <= 70) {
+    nav.classList.remove("nav--hidden");
+    return;
+  }
+
+  // Scrolling down - hide
+  if (currentScroll > lastScroll && currentScroll > 70) {
+    nav.classList.add("nav--hidden");
+  } 
+  // Scrolling up - show
+  else if (currentScroll < lastScroll) {
+    nav.classList.remove("nav--hidden");
+  }
+
+  lastScroll = currentScroll;
+});

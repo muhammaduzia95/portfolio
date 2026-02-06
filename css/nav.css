@@ -1,12 +1,20 @@
 /* nav.css */
 
 .nav {
-  position: sticky;
+  position: fixed; /* CHANGED from sticky */
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 999;
   background: var(--navBg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.nav--hidden {
+  transform: translateY(-100%);
 }
 
 .nav__inner {
@@ -14,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* IMPORTANT for absolute mobile menu */
+  position: relative;
 }
 
 .logo {
@@ -110,7 +118,7 @@
 
 .burger i {
   font-size: 18px;
-  color: var(--text); /* auto light/dark */
+  color: var(--text);
 }
 
 /* Mobile burger menu */
