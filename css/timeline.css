@@ -143,3 +143,83 @@
 .timeline__seg.is-active::before {
   background: var(--text);
 }
+
+/* =============================
+   MOBILE: Vertical Timeline
+   ============================= */
+@media (max-width: 720px) {
+  .timeline__track {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .timeline__seg {
+    width: 2px;
+    height: 80px;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Vertical line (centered) */
+  .timeline__seg::before {
+    left: 50%;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  /* Invisible tap area */
+  .timeline__seg::after {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    height: 100%;
+  }
+
+  /* All segments same size */
+  .timeline__seg--outer,
+  .timeline__seg--inner {
+    flex: none;
+    height: 80px;
+  }
+
+  /* Dot + Year (centered on line) */
+  .timeline__node {
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline__year {
+    font-size: 13px;
+  }
+
+  /* Card appears below the dot */
+  .timeline__card {
+    position: absolute;
+    left: 50%;
+    top: auto;
+    bottom: auto;
+    transform: translateX(-50%);
+    width: min(280px, 90vw);
+    margin-top: 80px;
+  }
+
+  /* Keep hover/click behavior */
+  .timeline__seg:hover::before,
+  .timeline__seg.is-active::before {
+    background: var(--text);
+  }
+}

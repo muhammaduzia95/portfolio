@@ -98,18 +98,48 @@
 }
 
 .burger {
-  display: none; /* shown in media query */
+  display: none;
   border: none;
   background: transparent;
   cursor: pointer;
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  color: var(--text); /* works in dark/light */
   place-items: center;
-  font-size: 20px;
 }
 
-.burger:hover {
-  background: var(--hover);
+.burger i {
+  font-size: 18px;
+  color: var(--text); /* auto light/dark */
+}
+
+/* Mobile burger menu */
+@media (max-width: 720px) {
+  .burger {
+    display: grid;
+  }
+
+  .menu {
+    position: absolute;
+    right: 16px;
+    top: 70px;
+    width: min(240px, calc(100vw - 32px));
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+  }
+
+  .menu.is-open {
+    display: flex;
+  }
+
+  .menu__link {
+    width: 100%;
+  }
 }

@@ -10,10 +10,20 @@ const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
 
 if (burger && menu) {
-  burger.addEventListener("click", () => {
+  burger.addEventListener("click", (e) => {
+    e.stopPropagation();
     menu.classList.toggle("is-open");
+    burger.setAttribute("aria-expanded", menu.classList.contains("is-open"));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !burger.contains(e.target)) {
+      menu.classList.remove("is-open");
+      burger.setAttribute("aria-expanded", "false");
+    }
   });
 }
+
 
 // ACTIVE LINK ON SCROLL
 const links = document.querySelectorAll(".menu__link");
@@ -130,3 +140,6 @@ if (lid && winkSound) {
   // This matches the blink exactly (because CSS triggers the animation)
   lid.addEventListener("animationstart", playWinkSound);
 }
+
+
+

@@ -72,7 +72,13 @@ html[data-theme="dark"] {
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
   color: var(--text);
   background: var(--bg);
   overflow-x: hidden;
@@ -114,36 +120,5 @@ body {
   }
   .timeline__notes {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 900px) {
-  /* show burger */
-  .burger {
-    display: inline-block;
-  }
-
-  /* hide menu by default on mobile */
-  .menu {
-    display: none; /* ✅ IMPORTANT */
-    position: absolute;
-    right: 24px;
-    top: 70px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 10px;
-    flex-direction: column;
-    width: 220px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  }
-
-  /* show menu when opened */
-  .menu.is-open {
-    display: flex;
-  }
-
-  .menu__link {
-    width: 100%;
   }
 }
