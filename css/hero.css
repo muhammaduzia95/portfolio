@@ -63,3 +63,27 @@
 .btn--light:hover {
   background: var(--hover);
 }
+
+/* Resume button - hidden on desktop, visible on mobile */
+.btn--resume {
+  display: inline-flex;
+}
+
+/* Contact button - visible on desktop, hidden on mobile */
+.btn--contact {
+  display: inline-flex;
+}
+
+/* Mobile/Tablet behavior */
+@media (max-width: 1000px) {
+  .btn--contact {
+    display: none; /* Hide Contact Me on mobile */
+  }
+}
+
+/* Desktop behavior */
+@media (min-width: 1001px) {
+  .btn--resume {
+    display: none; /* Hide Resume on desktop */
+  }
+}

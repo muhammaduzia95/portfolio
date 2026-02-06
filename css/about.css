@@ -27,9 +27,9 @@
   max-width: 520px;
 }
 
-.about__right {
-  margin-top: -30px;
-}
+/* .about__right { */
+/* margin-top: 0px; */
+/* } */
 
 /* Mobile: Stack image on top, text below */
 @media (max-width: 720px) {

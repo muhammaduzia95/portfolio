@@ -25,11 +25,24 @@
   position: relative;
 }
 
+/* .logo { */
+/* display: inline-flex; */
+/* align-items: center; */
+/* gap: 10px; */
+/* text-decoration: none; */
+/* } */
+
 .logo {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  outline: none; /* Remove focus outline */
+}
+
+.logo:focus {
+  outline: none; /* Extra safety for focus state */
 }
 
 .logo__img {
@@ -122,7 +135,7 @@
 }
 
 /* Mobile burger menu */
-@media (max-width: 720px) {
+@media (max-width: 1000px) {
   .burger {
     display: grid;
   }
@@ -149,5 +162,10 @@
 
   .menu__link {
     width: 100%;
+  }
+
+  /* HIDE download and theme icons on mobile/tablet */
+  .menu__icon {
+    display: none;
   }
 }
