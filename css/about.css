@@ -30,3 +30,24 @@
 .about__right {
   margin-top: -30px;
 }
+
+/* Mobile: Stack image on top, text below */
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about__placeholder {
+    height: 300px;
+    font-size: 90px;
+  }
+
+  .about__right {
+    margin-top: 0;
+  }
+
+  .about__text {
+    max-width: 100%;
+  }
+}

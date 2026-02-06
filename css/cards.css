@@ -98,3 +98,10 @@
 .tag:hover {
   background: var(--chipHover);
 }
+
+/* Mobile: Single column for cards */
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
